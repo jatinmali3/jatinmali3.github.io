@@ -1,0 +1,1 @@
+Place SVG icons in this folder if you want custom icon packs for skills or services.

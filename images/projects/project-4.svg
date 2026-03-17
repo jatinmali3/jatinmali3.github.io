@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="Project 4 placeholder">
+  <rect width="1200" height="750" fill="#0f172a"/>
+  <rect x="80" y="80" width="1040" height="590" rx="26" fill="#1e293b"/>
+  <rect x="130" y="130" width="160" height="470" rx="14" fill="#334155"/>
+  <rect x="320" y="130" width="750" height="90" rx="14" fill="#334155"/>
+  <rect x="320" y="250" width="750" height="350" rx="14" fill="#334155"/>
+  <rect x="360" y="160" width="240" height="34" rx="9" fill="#22c55e"/>
+  <text x="130" y="650" fill="#94a3b8" font-family="Arial, sans-serif" font-size="36">Project 4</text>
+</svg>

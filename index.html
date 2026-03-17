@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jatin Mali | Frontend Developer</title>
+    <meta name="description" content="Frontend developer portfolio showcasing modern responsive websites, company experience, and projects.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <header class="site-header" id="siteHeader">
+        <div class="container header-inner">
+            <a class="logo" href="#home">JM<span>.</span></a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNavOverlay">
+                <svg class="hamburger-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <line class="h-top"    x1="3" y1="6"  x2="21" y2="6"/>
+                    <line class="h-mid"    x1="3" y1="12" x2="21" y2="12"/>
+                    <line class="h-bot"    x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+
+            <nav class="site-nav" id="siteNav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle color mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a class="btn btn-outline" href="assets/jatin_Parmar_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── Mobile full-screen navigation overlay ── -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation">
+        <!-- click-outside backdrop -->
+        <div class="mob-backdrop" id="mobBackdrop"></div>
+
+        <nav class="mob-panel" id="mobPanel">
+            <!-- panel header -->
+            <div class="mob-panel-head">
+                <a class="logo" href="#home" id="mobLogo">JM<span>.</span></a>
+                <button class="mob-close" id="mobClose" aria-label="Close navigation">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6"  y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- numbered nav links -->
+            <ul class="mob-nav-list">
+                <li><a class="mob-nav-link" href="#home"><span class="mnl-num">01</span><span class="mnl-text">Home</span></a></li>
+                <li><a class="mob-nav-link" href="#about"><span class="mnl-num">02</span><span class="mnl-text">About</span></a></li>
+                <li><a class="mob-nav-link" href="#skills"><span class="mnl-num">03</span><span class="mnl-text">Skills</span></a></li>
+                <li><a class="mob-nav-link" href="#projects"><span class="mnl-num">04</span><span class="mnl-text">Projects</span></a></li>
+                <li><a class="mob-nav-link" href="#experience"><span class="mnl-num">05</span><span class="mnl-text">Experience</span></a></li>
+                <li><a class="mob-nav-link" href="#contact"><span class="mnl-num">06</span><span class="mnl-text">Contact</span></a></li>
+            </ul>
+
+            <!-- bottom actions -->
+            <div class="mob-panel-foot">
+                <a class="btn btn-primary mob-resume-btn" href="assets/jatin_Parmar_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+                <div class="mob-socials">
+                    <a href="https://github.com/jatinmali3" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/jatinmali3" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="mailto:jatin@example.com" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
+                <p class="mob-copy">&copy; <span id="mobYear"></span> Jatin Mali</p>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <section id="home" class="section hero">
+            <div class="hero-glow"></div>
+            <div class="hero-glow-alt"></div>
+            <div class="container hero-grid">
+                <div class="hero-copy gs-reveal">
+                    <p class="eyebrow">Hello I'm</p>
+                    <h1>Jatin Mali</h1>
+                    <h2><span id="typingText"></span></h2>
+                    <p class="hero-description">
+                        I build modern, responsive websites with clean code, smooth animations, and high performance, delivering seamless user experiences.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="assets/assets/jatin_Parmar_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Download Resume</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual gs-reveal" data-delay="120">
+                    <div class="profile-wrap">
+                        <img src="https://api.dicebear.com/9.x/micah/svg?seed=JatinMali&backgroundColor=transparent&baseColor=f9c9b6" alt="Jatin profile avatar">
+                    </div>
+                    <div class="floating-chip chip-1">HTML5</div>
+                    <div class="floating-chip chip-2">CSS3</div>
+                    <div class="floating-chip chip-3">JS</div>
+                    <div class="floating-chip chip-4">jQuery</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="about-wrapper">
+
+                    <!-- Left: Photo card -->
+                    <div class="about-left gs-reveal">
+                        <div class="about-photo-card">
+                            <div class="about-photo-ring">
+                                <img src="https://api.dicebear.com/9.x/micah/svg?seed=JatinMali&backgroundColor=transparent&baseColor=f9c9b6" alt="Jatin Mali - Frontend Developer">
+                            </div>
+                            <p class="about-name">Jatin Mali</p>
+                            <p class="about-role-tag">Frontend Developer</p>
+                            <div class="about-availability">
+                                <span class="avail-dot"></span> Available for work
+                            </div>
+                            <div class="about-quick-stats">
+                                <div class="qstat">
+                                    <strong>2+</strong>
+                                    <span>Years Experience</span>
+                                </div>
+                                <div class="qstat-divider"></div>
+                                <div class="qstat">
+                                    <strong>20+</strong>
+                                    <span>Projects Completed</span>
+                                </div>
+                                <div class="qstat-divider"></div>
+                                <div class="qstat">
+                                    <strong>10+</strong>
+                                    <span>Live Websites</span>
+                                </div>
+                            </div>
+                            <a href="assets/jatin_Parmar_Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary about-cv-btn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg> Download CV
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Text content -->
+                    <div class="about-right gs-reveal" data-delay="150">
+                        <p class="eyebrow">About Me</p>
+                        <h3>Passionate about building modern and user-friendly web experiences.</h3>
+                        <p> I am a frontend developer with hands-on experience in building responsive and high-performance websites using HTML, CSS, JavaScript, Bootstrap, and WordPress.</p>
+                        <p> Currently working at a product-focused company where I develop modern landing pages, WordPress websites, and interactive UI components — transforming Figma designs into clean, functional, and pixel-perfect interfaces.
+                        </p>
+
+                        <div class="about-info-grid">
+                            <div class="about-info-item">
+                                <span class="info-label">Name</span>
+                                <span class="info-value">Jatin Mali</span>
+                            </div>
+                            <div class="about-info-item">
+                                <span class="info-label">Location</span>
+                                <span class="info-value">India</span>
+                            </div>
+                            <div class="about-info-item">
+                                <span class="info-label">Experience</span>
+                                <span class="info-value">2+ Years</span>
+                            </div>
+                            <div class="about-info-item">
+                                <span class="info-label">Email</span>
+                                <span class="info-value">jatindineshbhaimali@gmail.com</span>
+                            </div>
+                            <div class="about-info-item">
+                                <span class="info-label">Status</span>
+                                <span class="info-value info-green">Open to Opportunities</span>
+                            </div>
+                            <div class="about-info-item">
+                                <span class="info-label">Focus</span>
+                                <span class="info-value">Frontend Development & WordPress</span>
+                            </div>
+                        </div>
+
+                        <div class="about-cta">
+                            <a href="#contact" class="btn btn-primary">Hire Me</a>
+                            <a href="#projects" class="btn btn-ghost">View Projects</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Skills Section aligned with User Request image styling -->
+        <section id="skills" class="section skill-section-bg">
+            <div class="container">
+                <p class="eyebrow center gs-reveal" style="color: #ffb703;">What I Do</p>
+                <h3 class="section-title center gs-reveal" style="color: #fff;" data-delay="80">My Skills</h3>
+                <p class="center gs-reveal" style="color: #a1a1aa; max-width: 600px; margin: 0 auto 3rem;">I am a frontend developer with experience in building engaging, functional interfaces. I specialize in the following technologies.</p>
+
+                <div class="dynamic-skill-grid gs-reveal" data-delay="120">
+                    <div class="skill-icon-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" width="48" height="48">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-icon-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" width="48" height="48">
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-icon-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" width="48" height="48">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-icon-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="48" height="48">
+                        <span>Bootstrap</span>
+                    </div>
+                    <div class="skill-icon-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg" alt="jQuery" width="48" height="48">
+                        <span>jQuery</span>
+                    </div>
+                    <div class="skill-icon-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="WordPress" width="48" height="48">
+                        <span>WordPress</span>
+                    </div>
+                    <div class="skill-icon-card">
+                        <img src="https://cdn.simpleicons.org/shopify/7AB55C" alt="Shopify" width="48" height="48">
+                        <span>Shopify</span>
+                    </div>
+                    <div class="skill-icon-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" width="48" height="48">
+                        <span>Git & GitHub</span>
+                    </div>
+                    <div class="skill-icon-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" width="48" height="48">
+                        <span>Figma</span>
+                    </div>
+                    <div class="skill-icon-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" width="48" height="48">
+                        <span>VS Code</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diagonal decorative background -->
+            <div class="skill-bg-decoration"></div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <p class="eyebrow center gs-reveal">Experience</p>
+                <h3 class="section-title center gs-reveal" data-delay="80">Professional journey and impact</h3>
+
+                <div class="timeline">
+                    <article class="timeline-item gs-reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Frontend Developer</h4>
+                            <p class="timeline-company">Forward-thinking Tech Agency</p>
+                            <p class="timeline-date">2024 - Present</p>
+                            <ul>
+                                <li>Developed highly responsive, interactive landing pages utilizing modern browser APIs.
+                                </li>
+                                <li>Created custom WordPress themes with advanced Gutenberg blocks.</li>
+                                <li>Achieved perfect 100 on Lighthouse performance scores by optimizing assets.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item gs-reveal" data-delay="120">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Web Developer Intern</h4>
+                            <p class="timeline-company">Creative Digital Studio</p>
+                            <p class="timeline-date">2023 - 2024</p>
+                            <ul>
+                                <li>Transformed complex Figma designs into semantic, reusable components.</li>
+                                <li>Collaborated via Git flow for robust branching and continuous deployment.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section has-glow">
+            <div class="container">
+                <p class="eyebrow center gs-reveal">Projects</p>
+                <h3 class="section-title center gs-reveal" data-delay="80"> Featured Projects & Work</h3>
+
+                <div class="projects-grid">
+                    <article class="project-card gs-reveal">
+                        <div class="project-image">
+                            <img src="images/projects/project-1.svg" alt="Ecommerce landing page preview">
+                            <div class="project-overlay">
+                                <a href="https://teamwork.webyant.com/jatin/busino/" target="_blank" rel="noopener" class="btn btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h4>Responsive Landing Page</h4>
+                            <p>Clean and responsive landing page built using HTML, CSS, and jQuery with smooth UI interactions.</p>
+                            <div class="tags">
+                                <span>HTML</span> <span>CSS</span> <span>jQuery</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card gs-reveal" data-delay="80">
+                        <div class="project-image">
+                            <img src="images/projects/project-2.svg" alt="Agency website preview">
+                            <div class="project-overlay">
+                                <a href="https://teamwork.webyant.com/jatin/kanhagirl/" target="_blank" rel="noopener" class="btn btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h4>Modern Website UI</h4>
+                            <p>Multi-section website layout with responsive design and interactive elements.</p>
+                            <div class="tags">
+                                <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card gs-reveal" data-delay="120">
+                        <div class="project-image">
+                            <img src="images/projects/project-3.svg" alt="WordPress business site preview">
+                            <div class="project-overlay">
+                                <a href="https://bwebyant.myshopify.com/" target="_blank" rel="noopener" class="btn btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h4>Shopify Store Setup</h4>
+                            <p>Customized Shopify theme with product pages, responsive layout, and store optimization.</p>
+                            <div class="tags">
+                                <span>Shopify</span> <span>Liquid</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card gs-reveal">
+                        <div class="project-image">
+                            <img src="images/projects/project-4.svg" alt="Portfolio redesign preview">
+                            <div class="project-overlay">
+                                <a href="#" target="_blank" rel="noopener" class="btn btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h4>WordPress Business Website</h4>
+                            <p>Fully responsive WordPress website built using Elementor with modern UI and optimized performance..</p>
+                            <div class="tags">
+                                <span>WordPress</span> <span>Elementor</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <p class="eyebrow center gs-reveal">Get In Touch</p>
+                <h3 class="section-title center gs-reveal" data-delay="80">Let's Work Together</h3>
+                <p class="contact-lead center gs-reveal" data-delay="120">Currently seeking frontend developer opportunities where I can contribute, learn, and grow. Let’s connect.</p>
+
+                <div class="contact-wrapper">
+
+                    <!-- Left: Contact info cards -->
+                    <div class="contact-left gs-reveal" data-delay="80">
+
+                        <a class="contact-card-item" href="mailto:jatindineshbhaimali@gmail.com">
+                            <div class="contact-card-icon email-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-card-text">
+                                <span>Email</span>
+                                <strong>jatindineshbhaimali@gmail.com</strong>
+                            </div>
+                            <svg class="contact-card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline
+                                    points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
+
+                        <a class="contact-card-item" href="https://www.linkedin.com/in/jatin-mali3/" target="_blank" rel="noopener noreferrer">
+                            <div class="contact-card-icon linkedin-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </div>
+                            <div class="contact-card-text">
+                                <span>LinkedIn</span>
+                                <strong>linkedin.com/in/jatinmali3</strong>
+                            </div>
+                            <svg class="contact-card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline
+                                    points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
+
+                        <a class="contact-card-item" href="https://github.com/jatinmali3" target="_blank" rel="noopener">
+                            <div class="contact-card-icon github-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="contact-card-text">
+                                <span>GitHub</span>
+                                <strong>github.com/jatinmali3</strong>
+                            </div>
+                            <svg class="contact-card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline
+                                    points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
+
+                        <div class="contact-availability-badge">
+                            <span class="avail-dot"></span> Currently open to new opportunities
+                        </div>
+                    </div>
+
+                    <!-- Right: Contact form -->
+                    <div class="contact-right gs-reveal" data-delay="200">
+                        <form class="contact-form-card" id="contactForm" novalidate>
+                            <h4>Send a Message</h4>
+
+                            <!-- honeypot: bots fill this, humans don't -->
+                            <div class="hp-field" aria-hidden="true">
+                                <input type="text" name="_hp" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <div class="floating-field">
+                                <input id="cfName" name="from_name" type="text" placeholder=" " autocomplete="name">
+                                <label for="cfName">Your Name</label>
+                                <span class="field-error" aria-live="polite"></span>
+                            </div>
+
+                            <div class="floating-field">
+                                <input id="cfEmail" name="from_email" type="email" placeholder=" " autocomplete="email">
+                                <label for="cfEmail">Your Email</label>
+                                <span class="field-error" aria-live="polite"></span>
+                            </div>
+
+                            <div class="floating-field">
+                                <input id="cfSubject" name="subject" type="text" placeholder=" ">
+                                <label for="cfSubject">Subject</label>
+                                <span class="field-error" aria-live="polite"></span>
+                            </div>
+
+                            <div class="floating-field">
+                                <textarea id="cfMessage" name="message" rows="5" placeholder=" "></textarea>
+                                <label for="cfMessage">Your Message</label>
+                                <span class="field-error" aria-live="polite"></span>
+                            </div>
+
+                            <button class="btn btn-primary contact-send-btn" type="submit" id="sendBtn">
+                                <span id="btnLabel">Send Message</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+
+                            <p class="form-status" id="formStatus"></p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>Jatin Mali <span id="year"></span></p>
+            <div class="footer-links">
+                <a href="https://github.com/jatinmali3/" target="_blank" rel="noopener">GitHub</a>
+                <a href="#https://www.linkedin.com/in/jatin-mali3/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:jatindineshbhaimali@gmial.com">Email</a>
+            </div>
+            <p class="built-with">Built with <span style="color:var(--accent);">&hearts;</span> using HTML, CSS, JS, GSAP
+            </p>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK — https://emailjs.com -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- GSAP for deep scroll animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>

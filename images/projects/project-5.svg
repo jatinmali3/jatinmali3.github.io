@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="Project 5 placeholder">
+  <rect width="1200" height="750" fill="#111827"/>
+  <rect x="95" y="95" width="1010" height="560" rx="28" fill="#1f2937"/>
+  <rect x="145" y="145" width="910" height="120" rx="16" fill="#334155"/>
+  <rect x="145" y="295" width="430" height="310" rx="16" fill="#334155"/>
+  <rect x="625" y="295" width="430" height="150" rx="16" fill="#334155"/>
+  <rect x="625" y="455" width="430" height="150" rx="16" fill="#334155"/>
+  <rect x="175" y="180" width="270" height="36" rx="10" fill="#6366f1"/>
+  <text x="145" y="700" fill="#94a3b8" font-family="Arial, sans-serif" font-size="36">Project 5</text>
+</svg>
