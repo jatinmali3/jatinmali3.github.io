@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jatin Mali | Frontend Developer</title>
     <meta name="description" content="Frontend developer portfolio showcasing modern responsive websites, company experience, and projects.">
+    <script>
+        (function() {
+            try {
+                if (!localStorage.getItem("jm-intro-played-v1")) {
+                    document.documentElement.classList.add("intro-preload");
+                }
+            } catch (error) {
+                document.documentElement.classList.add("intro-preload");
+            }
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,13 +25,17 @@
 </head>
 
 <body>
+    <div class="intro-loader" id="introLoader" aria-hidden="true">
+        <h1 class="intro-logo" id="introLogo">JM<span>.</span></h1>
+    </div>
+
     <div class="progress-bar" id="progressBar"></div>
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
-            <a class="logo" href="#home">JM<span>.</span></a>
+            <a class="logo" id="headerLogo" href="#home">JM<span>.</span></a>
 
             <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNavOverlay">
                 <svg class="hamburger-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">

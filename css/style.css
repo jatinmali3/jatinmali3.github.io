@@ -40,6 +40,52 @@ body {
     overflow-x: hidden;
 }
 
+html.intro-preload,
+html.intro-preload body {
+    overflow: hidden;
+}
+
+.intro-loader {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle at 50% 35%, color-mix(in oklab, var(--primary) 28%, var(--bg)) 0%, var(--bg) 58%);
+    z-index: 5000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.intro-logo {
+    margin: 0;
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(3rem, 9vw, 7rem);
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: #fff;
+    text-shadow: 0 12px 45px rgba(0, 0, 0, 0.35);
+}
+
+.intro-logo span {
+    color: var(--accent);
+}
+
+#headerLogo {
+    transition: opacity 0.25s ease;
+}
+
+html.intro-preload .intro-loader {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+html.intro-preload #headerLogo {
+    opacity: 0;
+}
+
 h1,
 h2,
 h3,

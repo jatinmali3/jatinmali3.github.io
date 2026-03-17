@@ -1,4 +1,101 @@
 /* Typing Animation */
+const INTRO_STORAGE_KEY = "jm-intro-played-v1";
+const INTRO_FAILSAFE_MS = 2600;
+
+function finishIntro(loader, htmlRoot) {
+    if (loader) {
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+        loader.style.pointerEvents = "none";
+        loader.setAttribute("aria-hidden", "true");
+    }
+    if (htmlRoot) {
+        htmlRoot.classList.remove("intro-preload");
+    }
+}
+
+function runIntroLogoTransition() {
+    const htmlRoot = document.documentElement;
+    const loader = document.getElementById("introLoader");
+    const introLogo = document.getElementById("introLogo");
+    const headerLogo = document.getElementById("headerLogo");
+
+    if (!loader || !introLogo || !headerLogo) {
+        htmlRoot.classList.remove("intro-preload");
+        return;
+    }
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let hasPlayed = false;
+
+    try {
+        hasPlayed = localStorage.getItem(INTRO_STORAGE_KEY) === "true";
+    } catch (error) {
+        hasPlayed = false;
+    }
+
+    if (hasPlayed || prefersReducedMotion || typeof gsap === "undefined") {
+        finishIntro(loader, htmlRoot);
+        return;
+    }
+
+    try {
+        localStorage.setItem(INTRO_STORAGE_KEY, "true");
+    } catch (error) {
+        // No-op: intro still runs even if localStorage is unavailable.
+    }
+
+    const headerRect = headerLogo.getBoundingClientRect();
+    const introRect = introLogo.getBoundingClientRect();
+    const dx = headerRect.left - introRect.left;
+    const dy = headerRect.top - introRect.top;
+    const targetScale = introRect.width > 0 ? headerRect.width / introRect.width : 0.5;
+
+    gsap.set(introLogo, {
+        position: "fixed",
+        left: introRect.left,
+        top: introRect.top,
+        margin: 0,
+        x: 0,
+        y: 0,
+        scale: 1,
+        transformOrigin: "top left",
+        willChange: "transform, opacity"
+    });
+
+    let isFinished = false;
+    const completeIntro = () => {
+        if (isFinished) return;
+        isFinished = true;
+        finishIntro(loader, htmlRoot);
+    };
+
+    const failSafeTimer = window.setTimeout(completeIntro, INTRO_FAILSAFE_MS);
+
+    gsap.timeline({
+            defaults: {
+                ease: "power3.inOut"
+            },
+            onComplete: () => {
+                window.clearTimeout(failSafeTimer);
+                completeIntro();
+            }
+        })
+        .to(introLogo, {
+            x: dx,
+            y: dy,
+            scale: targetScale,
+            duration: 1.35
+        })
+        .to(loader, {
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.out"
+        }, "-=0.1");
+}
+
+window.addEventListener("load", runIntroLogoTransition);
+
 const typingText = document.getElementById("typingText");
 const roles = [
     "Frontend Developer",
